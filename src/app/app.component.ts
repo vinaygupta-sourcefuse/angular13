@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular13-app';
+  title = 'angular13-app-vinayg';
+  count =0
+  counter(type : string){
+    type === 'add'? this.count++: this.count--;
+  }
 }
