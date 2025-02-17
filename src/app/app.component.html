@@ -105,4 +105,5 @@ Angular Form Example
 
 
 Child Component
-<app-login [item]="data"></app-login>
+<!-- <app-login [item]="data"></app-login> -->
+<app-login (updateDataEvent)="updateData($event)" [item]="data"></app-login>

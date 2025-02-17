@@ -1,6 +1,18 @@
 <p style="color: blue; font-size: 20px;">login works!</p>
 // internal css > component css > global css  in priority terms
 
+<br/>
+<br/>
+<br/>
+<br/>
 
-this data is comming from parent component
+this data is coming from parent component
 <h1>{{item}}</h1>
+
+<br/>
+<br/>
+in this case, data will be sent by child to prarent component
+<br/>
+
+<input type="text" #box/>
+<button (click)="updateDataEvent.emit(box.value)">Update Data</button>

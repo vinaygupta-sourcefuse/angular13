@@ -37,6 +37,14 @@ onSubmit(userForm: any) {
 
 // data to send in child (login) component 
 
-data =10;
+data ='this data is coming from Parent to child component';
+
+// in this case, data will be sent by child to prarent component
+
+dataStr :string=""
+updateData(item : string){
+  console.warn(item)
+  this.data = item
+}
 }
 
