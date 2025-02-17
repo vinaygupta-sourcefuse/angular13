@@ -131,3 +131,14 @@ Template Reference Variable Example
 <br /><br />
 <br /><br />
 
+
+Reactive Forms 
+
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <input type="text" placeholder="Enter Name" name="user" formControlName="user"/>
+  <br><br>
+  <input type="password" placeholder="Enter Password" name="password" formControlName="password"/>
+  <br><br>
+  <button>Login</button>
+</form>
+

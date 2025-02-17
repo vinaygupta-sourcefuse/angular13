@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -51,5 +51,15 @@ logValue(item:any){
   console.log(item)
 }
 
+
+// Reactive Forms
+
+loginForm = new FormGroup({
+  user : new FormControl(''),
+  password : new FormControl('')
+})
+loginUser(){
+  console.log(this.loginForm.value)
+}
 }
 
