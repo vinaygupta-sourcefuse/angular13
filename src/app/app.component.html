@@ -107,3 +107,17 @@ Angular Form Example
 Child Component
 <!-- <app-login [item]="data"></app-login> -->
 <app-login (updateDataEvent)="updateData($event)" [item]="data"></app-login>
+
+
+<br>
+<br>
+<br>
+Two Way binding Meaning is
+<br>
+<p>The [(ngModel)]="name" directive binds the input element to the name property in the component class.<br>
+  When the user types into the input field, the name property is updated.<br>
+  The paragraph element displays the updated name property in real-time.</p><br>
+
+<input type="text" [(ngModel)]="name">
+<h4>{{name}}</h4>
+

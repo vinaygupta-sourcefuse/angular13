@@ -29,7 +29,7 @@ export class AppComponent {
 
 onSubmit(userForm: any) {
   this.submitted = true;
-  console.log('Username:', userForm.value.username);
+  console.log('Username:', userForm.username.value);
   console.log('Email:', userForm.value.email);
   console.log('Password:', userForm.value.password);
 }
