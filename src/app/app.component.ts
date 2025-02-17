@@ -46,5 +46,10 @@ updateData(item : string){
   console.warn(item)
   this.data = item
 }
+
+logValue(item:any){
+  console.log(item)
+}
+
 }
 

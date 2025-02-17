@@ -121,3 +121,13 @@ Two Way binding Meaning is
 <input type="text" [(ngModel)]="name">
 <h4>{{name}}</h4>
 
+<br /><br />
+
+Template Reference Variable Example
+<br /><br />
+<input #myInput type="text" placeholder="Enter something" />
+<button (click)="logValue(myInput.value)">Log Input Value</button>
+
+<br /><br />
+<br /><br />
+
