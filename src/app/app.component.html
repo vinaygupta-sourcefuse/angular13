@@ -1,3 +1,11 @@
 <span>{{ title }} app is running!</span>
 <button (click)="counter('add')">Count ++ : {{ count }}</button>
 <app-login></app-login>
+
+// property binding
+<br/><br/>
+<br/><br/>
+
+<input type = 'text' name="user-name" value ={{name}} disabled = {{disable}}>  // not disabled as expected
+<br/><br/>
+<input type = 'text' name="user-name" [value] = name [disabled]= disable>    // disabled as expected

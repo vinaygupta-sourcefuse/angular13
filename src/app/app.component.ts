@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular13-app-vinayg';
-  count =0
+  count =0;
+  name = 'vinay';
+  disable = false;
   counter(type : string){
     type === 'add'? this.count++: this.count--;
   }
