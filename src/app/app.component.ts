@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -55,11 +55,17 @@ logValue(item:any){
 // Reactive Forms
 
 loginForm = new FormGroup({
-  user : new FormControl(''),
-  password : new FormControl('')
+  user : new FormControl('',[Validators.required, Validators.email]),
+  password : new FormControl('',[Validators.required, Validators.minLength(3)])
 })
 loginUser(){
   console.log(this.loginForm.value)
+}
+get userValidation(){
+  return this.loginForm.get('user')
+}
+get passwordValidation(){
+  return this.loginForm.get('password')
 }
 }
 
