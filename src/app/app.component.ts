@@ -35,6 +35,8 @@ onSubmit(userForm: any) {
 }
 
 
+// data to send in child (login) component 
 
+data =10;
 }
 
