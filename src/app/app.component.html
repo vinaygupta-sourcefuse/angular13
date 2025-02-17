@@ -1,11 +1,104 @@
 <span>{{ title }} app is running!</span>
 <button (click)="counter('add')">Count ++ : {{ count }}</button>
 <app-login></app-login>
+<br /><br />
+<br /><br />
 
-// property binding
-<br/><br/>
-<br/><br/>
+property binding
+<br /><br />
+"property binding work with boolean"
+<input
+  type="text"
+  name="user-name"
+  value="{{ name }}"
+  disabled="{{ disable }}"
+/>
+// not disabled as expected <br /><br />
+<input type="text" name="user-name" [value]="name" [disabled]="disable" /> //
+disabled as expected
 
-<input type = 'text' name="user-name" value ={{name}} disabled = {{disable}}>  // not disabled as expected
-<br/><br/>
-<input type = 'text' name="user-name" [value] = name [disabled]= disable>    // disabled as expected
+<br /><br />
+<br /><br />
+
+ngIf practice
+<div *ngIf="isLoggedIn; else loggedOut">
+  <p>Welcome back, {{ name }}!</p>
+</div>
+<!-- if isLoggedIn is false than ng-template will work -->
+<ng-template #loggedOut>
+  <p>Please log in.</p>
+</ng-template>
+
+<br /><br />
+<br /><br />
+
+ngIf...else if practice
+<div *ngIf="isLoggedIn; else loggedOut">
+  <p>Welcome back, {{ name }}!</p>
+</div>
+
+<ng-template [ngIf]="!isLoggedIn && isGuest">
+  <p>Welcome, guest! Please log in for more features.</p>
+</ng-template>
+
+<br /><br />
+<br /><br />
+
+ngSwitch practice
+<div [ngSwitch]="userRole">
+  <p *ngSwitchCase="'admin'">Welcome, Admin! You have full access.</p>
+  <p *ngSwitchCase="'user'">Welcome, User! You have limited access.</p>
+  <p *ngSwitchCase="'guest'">
+    Welcome, Guest! Please log in for more features.
+  </p>
+  <p *ngSwitchDefault>Role not recognized. Please contact support.</p>
+</div>
+
+<br /><br />
+<br /><br />
+
+for loop iteration example
+<ul>
+  <li *ngFor="let item of items; let i = index">{{ i + 1 }}. {{ item }}</li>
+</ul>
+
+<br /><br />
+<br /><br />
+
+2D array example
+<table border="1">
+  <tr *ngFor="let row of matrix">
+    <td *ngFor="let cell of row">
+      {{ cell }}
+    </td>
+  </tr>
+</table>
+
+<br /><br />
+<br /><br />
+
+Angular Form Example
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" ngModel />
+  <br /><br />
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" ngModel />
+  <br /><br />
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" ngModel />
+  <br /><br />
+
+  <button type="submit">Submit</button>
+</form>
+
+<div *ngIf="submitted">
+  <h3>Form Submitted</h3>
+  <p>Username: {{ userForm.value.username }}</p>
+  <p>Email: {{ userForm.value.email }}</p>
+  <p>Password: {{ userForm.value.password }}</p>
+</div>
+
+<br /><br />
