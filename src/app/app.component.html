@@ -208,3 +208,18 @@ because of router-outlet now we can navigate between child components
 
 <br>
 <br>
+
+
+
+<h1>Data getting from server using get Request</h1>
+<ul>
+  <li *ngFor="let book of books | slice:0:showLimit">
+    {{book.title}}
+  </li>
+</ul>
+<button *ngIf="books.length > showLimit" (click)="showMore()">Show More ...</button>
+
+<br>
+<br>
+<br>
+<br>

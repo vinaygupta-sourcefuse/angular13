@@ -14,6 +14,7 @@ import { NoPageComponent } from './no-page/no-page.component';
 import { ChildComponent } from './child/child.component';
 import { Children1Component } from './children1/children1.component';
 import { Children2Component } from './children2/children2.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { Children2Component } from './children2/children2.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

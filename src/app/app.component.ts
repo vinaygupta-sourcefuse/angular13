@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsersDataService } from './services/users-data.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -66,6 +68,19 @@ get userValidation(){
 }
 get passwordValidation(){
   return this.loginForm.get('password')
+}
+
+books: any[] = [];
+constructor(private userData : UsersDataService){
+  userData.users().subscribe((content: any) => {
+    console.log("userData : ",content)
+    this.books = content
+  }) 
+}
+
+showLimit = 5;
+showMore(){
+  this.showLimit += 5;
 }
 }
 
