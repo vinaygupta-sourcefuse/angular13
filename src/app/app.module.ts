@@ -9,12 +9,13 @@ import { RefElDirective } from './ref-el.directive';
 import { Router1Component } from './router1/router1.component';
 import { Router2Component } from './router2/router2.component';
 import { Router3Component } from './router3/router3.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent, // child component
-    RefElDirective, Router1Component, Router2Component, Router3Component  // Directive 
+    RefElDirective, Router1Component, Router2Component, Router3Component, UserComponent  // Directive 
   ],
   imports: [
     BrowserModule,

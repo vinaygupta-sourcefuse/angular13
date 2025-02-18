@@ -132,8 +132,8 @@ Template Reference Variable Example
 <br /><br />
 
 
-Reactive Forms 
-
+Reactive Forms with Validation functionality
+<br />  
 <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
   <input type="text" placeholder="Enter Name" name="user" formControlName="user"/>
   <br>
@@ -177,6 +177,24 @@ because of router-outlet now we can navigate between child components
 
 <router-outlet></router-outlet>
 
+<br>
+<br>
+
+
+<h1>Dynamic Routing</h1>
+<br>
+/user/1
+<br>
+/user/2
+<br>
+/user/3
+<br>
+<br>
+<a routerLink="user/1">User 1 is here</a>
+<br>
+<a routerLink="user/2">User 2 is here</a>
+<br>
+<a routerLink="user/3">User 3 is here</a>
 <br>
 <br>
 
