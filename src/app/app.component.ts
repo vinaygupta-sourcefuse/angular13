@@ -70,9 +70,10 @@ get passwordValidation(){
   return this.loginForm.get('password')
 }
 
+//get request
 books: any[] = [];
 constructor(private userData : UsersDataService){
-  userData.users().subscribe((content: any) => {
+  userData.books().subscribe((content: any) => {
     console.log("userData : ",content)
     this.books = content
   }) 
@@ -81,6 +82,12 @@ constructor(private userData : UsersDataService){
 showLimit = 5;
 showMore(){
   this.showLimit += 5;
+}
+
+//post request
+addBook(bookForm : any){
+  console.log(bookForm.value)
+  this.userData.saveBooks(bookForm.value).subscribe((result) => console.log(result))
 }
 }
 
