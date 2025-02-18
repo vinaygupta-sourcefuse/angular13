@@ -10,12 +10,13 @@ import { Router1Component } from './router1/router1.component';
 import { Router2Component } from './router2/router2.component';
 import { Router3Component } from './router3/router3.component';
 import { UserComponent } from './user/user.component';
+import { NoPageComponent } from './no-page/no-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent, // child component
-    RefElDirective, Router1Component, Router2Component, Router3Component, UserComponent  // Directive 
+    RefElDirective, Router1Component, Router2Component, Router3Component, UserComponent, NoPageComponent  // Directive 
   ],
   imports: [
     BrowserModule,
