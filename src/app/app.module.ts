@@ -15,8 +15,8 @@ import { ChildComponent } from './child/child.component';
 import { Children1Component } from './children1/children1.component';
 import { Children2Component } from './children2/children2.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AdminModule } from './admin/admin.module';
-import { StudentModule } from './student/student.module';
+// import { AdminModule } from './admin/admin.module';
+// import { StudentModule } from './student/student.module';
 
 @NgModule({
   declarations: [
@@ -30,8 +30,8 @@ import { StudentModule } from './student/student.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AdminModule, // Since we are not using lazy loading, we need to import the AdminModule in app.module.ts.
-    StudentModule 
+    // AdminModule, // Since we are using lazy loading, we don't need to import the AdminModule in app.module.ts.
+    // StudentModule  // similarly this
   ],
   providers: [],
   bootstrap: [AppComponent]
