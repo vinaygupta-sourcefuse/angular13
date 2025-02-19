@@ -5,8 +5,12 @@ import { SingupComponent } from './singup/singup.component';
 
 
 const routes: Routes = [
-  {path : 'signin', component : SinginComponent},
-  {path : 'signup', component : SingupComponent}
+  {
+    path :'admin', children : [ 
+      {path : 'signin', component : SinginComponent},
+      {path : 'signup', component : SingupComponent}
+    ]
+  }
 ];
 
 @NgModule({
