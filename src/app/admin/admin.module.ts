@@ -5,6 +5,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { SinginComponent } from './singin/singin.component';
 import { SingupComponent } from './singup/singup.component';
 
+console.log("checks, is it loading in root page without calling/ requesting for this component")
 
 @NgModule({
   declarations: [
