@@ -21,10 +21,10 @@ const routes: Routes = [
       {path : 'children2', component: Children2Component}
     ]},
   {path : 'user/:id', component: UserComponent},
-  //lazy - loading applied
+  //lazy - loading applied in module
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'student', loadChildren: () => import('./student/student.module').then(m => m.StudentModule) },
-  {path : '**', component : NoPageComponent}  // it must need to in the last line
+   {path : '**', component : NoPageComponent}  // it must need to in the last line
 ];
 
 @NgModule({
