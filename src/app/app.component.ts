@@ -135,6 +135,15 @@ isBold = false;
     this.messageData = this.child.sayHello();
   }
 
+
+  // Life Cycle hooks all in one place
+
+  showComponent = true;
+  parentMessage = 'Initial Message';
+
+  toggleComponent() {
+    this.showComponent = !this.showComponent;
+  }
 }
 
 

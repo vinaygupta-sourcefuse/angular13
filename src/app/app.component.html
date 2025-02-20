@@ -441,3 +441,12 @@ The ng-content directive in Angular is used for <b>content projection</b>, allow
 ✅ Avoids unnecessary @Input() properties for passing HTML.
 <br>
 <br>
+
+
+<h1>Life Cycle</h1>
+
+<button (click)="toggleComponent()">
+  {{ showComponent ? 'Destroy Component' : 'Create Component' }}
+</button>
+<p>View in Console</p>
+<app-lifecycle *ngIf="showComponent" [message]="parentMessage"></app-lifecycle>
