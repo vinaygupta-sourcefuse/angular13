@@ -10,6 +10,28 @@ import {
     <h3 #heading>Lifecycle Hooks in Angular</h3>
     <p>Message: {{ message }}</p>
     <button (click)="changeMessage()">Change Message</button>
+    <br>
+    <br>
+    <br>
+
+    🔥 Key Takeaways
+    <br>
+    <br>
+✅ ngOnChanges() → Runs when @Input() changes.
+    <br>
+    ✅ ngOnInit() → Runs once after component initialization.
+    <br>
+    ✅ ngDoCheck() → Runs on every change detection cycle.
+    <br>
+    ✅ ngAfterContentInit() → Runs when ng-content is projected.
+    <br>
+    ✅ ngAfterViewInit() → Runs after the view is initialized (DOM manipulation possible).
+    <br>
+    ✅ ngOnDestroy() → Cleans up before component is destroyed.
+    <br>
+
+    <br>
+
   `,
 })
 export class LifecycleComponent 
