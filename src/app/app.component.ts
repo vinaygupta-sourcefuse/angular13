@@ -105,6 +105,23 @@ addBook(bookForm : any){
 //Two way binding
 username = '';
 
+//ngStyle directive
+fontSize = 20;
+
+  changeStyle() {
+    this.textColor = 'red';
+    this.fontSize = 25;
+  }
+
+//ngClass directive
+
+isBold = false;
+
+  toggleClass() {
+    this.isHighlighted = !this.isHighlighted;
+    this.isBold = !this.isBold;
+  }
+
 }
 
 

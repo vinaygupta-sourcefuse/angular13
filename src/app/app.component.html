@@ -329,3 +329,31 @@ since we already using react-outlet in this page, that's  for routing module thi
 <p>You typed: {{ username }}</p>
 
 <br><br>
+
+<h1>ngStyle Directive</h1>
+
+<p [ngStyle]="{ 'color': textColor, 'font-size': fontSize + 'px' }">
+  This is a styled paragraph.
+</p>
+<button (click)="changeStyle()">Change Style</button>
+
+<br><br>
+
+<h1>ngClass Directive</h1>
+
+<p>ngClass is used to conditionally apply CSS classes to an element.</p>
+
+<p [ngClass]="{ 'highlight': isHighlighted, 'bold-text': isBold }">
+  This is a dynamically styled paragraph.
+</p>
+<button (click)="toggleClass()">Toggle Class</button>
+
+<br><br>
+
+🔹 When to Use What?
+<br>
+✅ Use ngStyle when you need to dynamically change inline styles based on a condition.
+<br>
+✅ Use ngClass when you need to add or remove multiple classes dynamically.
+<br>
+<br>

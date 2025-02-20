@@ -5,3 +5,12 @@ p {
     line-height: 1.5;
     margin: 10px 0;
 }
+
+/* styles.css */
+.highlight {
+    background-color: yellow;
+  }
+  .bold-text {
+    font-weight: bold;
+  }
+  
