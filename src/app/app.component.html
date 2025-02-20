@@ -366,3 +366,53 @@ since we already using react-outlet in this page, that's  for routing module thi
     <p>{{ messageData }}</p>
 <br>
 <br>
+
+<br>
+ViewChild Decorator in Angular 🔍
+<br>
+<br>
+The ViewChild decorator in Angular is used to get a reference to a child component, directive, or DOM element inside a parent component. It allows direct access to an element or component after the view has been initialized.
+<br>
+<br>
+
+1️⃣ Basic Syntax
+<br>
+<br>
+
+
+<pre>
+  <code>
+    @ViewChild('referenceName') elementRef: ElementType;
+  </code>
+</pre>
+<br>
+<br>
+referenceName → The reference to the DOM element or child component.
+<br>
+elementRef → The variable that stores the reference.
+<br>
+ElementType → The type of the element (e.g., ElementRef, ComponentName).
+<br>
+<br>
+
+Lifecycle Consideration (ngAfterViewInit)
+<br>
+<br>
+Since @ViewChild accesses elements after the view is initialized, it is best to use it inside ngAfterViewInit() instead of ngOnInit().
+<br>
+<br>
+
+2️⃣ When to Use @ViewChild?
+<br>
+<br>
+✅ Accessing DOM elements directly (e.g., changing styles).
+<br>
+✅ Getting a reference to a child component and calling its methods.
+<br>
+✅ Working with directives inside a template.
+<br>
+<br>
+
+
+<br>
+<br>
