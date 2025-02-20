@@ -416,3 +416,28 @@ Since @ViewChild accesses elements after the view is initialized, it is best to 
 
 <br>
 <br>
+
+<h1>ng-Content Directive</h1>
+
+
+<app-profile>
+  <h2 class="profile-header">John Doe</h2>
+  <p>This is John's profile description.</p>
+  <p class="profile-footer">Contact: john@example.com</p>
+</app-profile>
+<br>
+<br>
+
+The ng-content directive in Angular is used for <b>content projection</b>, allowing a parent component to pass HTML content to a child component dynamically.
+<br>
+
+1️⃣ Why Use ng-content?
+<br>
+<br>
+✅ Enables customizable child components.
+<br>
+✅ Helps create reusable UI components.
+<br>
+✅ Avoids unnecessary @Input() properties for passing HTML.
+<br>
+<br>
