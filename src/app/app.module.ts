@@ -15,6 +15,7 @@ import { ChildComponent } from './child/child.component';
 import { Children1Component } from './children1/children1.component';
 import { Children2Component } from './children2/children2.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewChildComponent } from './view-child/view-child.component';
 // import { AdminModule } from './admin/admin.module';
 // import { StudentModule } from './student/student.module';
 
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent, // child component
-    RefElDirective, Router1Component, Router2Component, Router3Component, UserComponent, NoPageComponent, ChildComponent, Children1Component, Children2Component // Directive 
+    RefElDirective, Router1Component, Router2Component, Router3Component, UserComponent, NoPageComponent, ChildComponent, Children1Component, Children2Component, ViewChildComponent // Directive 
   ],
   imports: [
     BrowserModule,

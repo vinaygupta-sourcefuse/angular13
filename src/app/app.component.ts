@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersDataService } from './services/users-data.service';
+import { ViewChildComponent } from './view-child/view-child.component';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { UsersDataService } from './services/users-data.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'angular13-app-vinayg';
   count =0;
   name = 'vinay';
@@ -120,6 +121,18 @@ isBold = false;
   toggleClass() {
     this.isHighlighted = !this.isHighlighted;
     this.isBold = !this.isBold;
+  }
+
+
+  @ViewChild(ViewChildComponent) child!: ViewChildComponent;
+  messageData = '';
+
+  ngAfterViewInit() {
+    console.log(this.child.sayHello());  // Logs message from child
+  }
+
+  getChildMessage() {
+    this.messageData = this.child.sayHello();
   }
 
 }
