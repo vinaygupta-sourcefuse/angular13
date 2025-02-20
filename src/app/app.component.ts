@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersDataService } from './services/users-data.service';
 import { ViewChildComponent } from './view-child/view-child.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { ViewChildComponent } from './view-child/view-child.component';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnInit {
   title = 'angular13-app-vinayg';
   count =0;
   name = 'vinay';
@@ -143,6 +144,26 @@ isBold = false;
 
   toggleComponent() {
     this.showComponent = !this.showComponent;
+  }
+
+
+  //Observables
+
+  observData ='';
+  ngOnInit() {
+    // Create an Observable
+    const myObservable = new Observable<string>((observer) => {
+      observer.next('Hello'); // Emit first value
+      observer.next('from');
+      observer.next('Observables!');
+      observer.complete(); // Marks completion (no more data)
+    });
+
+    // Subscribe to the Observable
+    myObservable.subscribe({
+      next: (value) => (this.observData += value + ' '), // Collect values
+      complete: () => console.log('Observable completed!'),
+    });
   }
 }
 
