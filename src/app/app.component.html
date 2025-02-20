@@ -271,7 +271,6 @@ because of router-outlet now we can navigate between child components
 since we already use react-outlet in this page, that's  for routing module this below coded router-outlet is not working
 <!-- <router-outlet></router-outlet> -->
 <br><br>
-<br><br>
 
 
 
@@ -296,4 +295,37 @@ since we already using react-outlet in this page, that's  for routing module thi
 <br><br>
 
 <br><br>
+
+<h1>Style Binding</h1>
+<br>
+<p [style.color]="textColor">This text has dynamic color</p>
+<p [style.fontWeight]="isHighlighted ? 'bold' : 'normal'">This text can be bold</p>
+<button (click)="isHighlighted = !isHighlighted">Toggle Bold</button>
+
+<br><br>
+
+<h1>Property Binding or One - way Binding</h1>
+<br>
+<p>it's Workflow is  : Component → View </p>
+<h3>this content is coming from title : {{title}} variable </h3>
+<p [innerText]="title"></p>
+
+<br><br>
+
+<h1>Event Binding</h1>
+<br>
+<p>it's Workflow is  : View → Component </p>
+<br>
+<p>{{ message }}</p>
+<button (click)="onButtonClick()">Click Me</button>
+
+<br><br>
+
+<h1>Two way binding using [(ngModel)]</h1>
+<br>
+<p>it's Workflow is  : in both ways </p>
+<br>
+<input [(ngModel)]="username" placeholder="Enter your name">
+<p>You typed: {{ username }}</p>
+
 <br><br>

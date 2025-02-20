@@ -89,5 +89,22 @@ addBook(bookForm : any){
   console.log(bookForm.value)
   this.userData.saveBooks(bookForm.value).subscribe((result) => console.log(result))
 }
+
+//Style binding
+
+  isHighlighted = true;
+  textColor = 'blue';
+
+//Event binding
+  message = 'Click the button!';
+  
+  onButtonClick() {
+    this.message = 'Button Clicked!';
+  }
+
+//Two way binding
+username = '';
+
 }
+
 
