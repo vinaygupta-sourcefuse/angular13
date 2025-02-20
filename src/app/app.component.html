@@ -450,3 +450,9 @@ The ng-content directive in Angular is used for <b>content projection</b>, allow
 </button>
 <p>View in Console</p>
 <app-lifecycle *ngIf="showComponent" [message]="parentMessage"></app-lifecycle>
+
+<h2>Content Life Cycle </h2>
+
+<app-lifecycle-content>
+  <p #projectedContent>This is projected content</p>
+</app-lifecycle-content>

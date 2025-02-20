@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewChildComponent } from './view-child/view-child.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { LifecycleContentComponent } from './lifecycle-content/lifecycle-content.component';
 // import { AdminModule } from './admin/admin.module';
 // import { StudentModule } from './student/student.module';
 
@@ -25,7 +26,7 @@ import { LifecycleComponent } from './lifecycle/lifecycle.component';
   declarations: [
     AppComponent,
     LoginComponent, // child component
-    RefElDirective, Router1Component, Router2Component, Router3Component, UserComponent, NoPageComponent, ChildComponent, Children1Component, Children2Component, ViewChildComponent, ProfileComponent, LifecycleComponent // Directive 
+    RefElDirective, Router1Component, Router2Component, Router3Component, UserComponent, NoPageComponent, ChildComponent, Children1Component, Children2Component, ViewChildComponent, ProfileComponent, LifecycleComponent, LifecycleContentComponent // Directive 
   ],
   imports: [
     BrowserModule,
