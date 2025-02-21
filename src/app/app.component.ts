@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersDataService } from './services/users-data.service';
 import { ViewChildComponent } from './view-child/view-child.component';
-import { Observable, of, catchError, from, interval } from 'rxjs';
+import { Observable, of, catchError, from, interval, timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -207,9 +207,13 @@ isBold = false;
 
     // myObservable.subscribe(value => console.log(value));
 
-    const myObservable = interval(1000); // Emits values every 1 second
+    // const myObservable = interval(1000); // Emits values every 1 second
 
-    myObservable.subscribe(value => console.log(value));
+    // myObservable.subscribe(value => console.log(value));
+
+    const myObservable = timer(3000); // Emits after 3 seconds
+
+    myObservable.subscribe(value => console.log('Started after delay:', value));
   }
 }
 
