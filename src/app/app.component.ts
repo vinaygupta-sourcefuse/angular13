@@ -184,20 +184,24 @@ isBold = false;
     //     complete: () => console.log('Observable Completed'),
     //   });
 
-    const myObservable = new Observable((observer) => {
-      observer.next('Hello');
-      observer.next('World');
-      observer.error('Something went wrong!');
-    });
+    // const myObservable = new Observable((observer) => {
+    //   observer.next('Hello');
+    //   observer.next('World');
+    //   observer.error('Something went wrong!');
+    // });
     
-    // Using catchError to handle errors
-    myObservable
-      .pipe(catchError((err) => of('Default Value')))
-      .subscribe({
-        next: (value) => console.log('Received:', value),
-        error: (err) => console.error('Error:', err),
-        complete: () => console.log('Observable Completed'),
-      });
+    // // Using catchError to handle errors
+    // myObservable
+    //   .pipe(catchError((err) => of('Default Value')))
+    //   .subscribe({
+    //     next: (value) => console.log('Received:', value),
+    //     error: (err) => console.error('Error:', err),
+    //     complete: () => console.log('Observable Completed'),
+    //   });
+
+    const myObservable = of(1, 2, 3, 4, 5);
+
+    myObservable.subscribe(value => console.log(value));
   }
 }
 
