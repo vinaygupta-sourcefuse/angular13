@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersDataService } from './services/users-data.service';
 import { ViewChildComponent } from './view-child/view-child.component';
-import { Observable, of, catchError } from 'rxjs';
+import { Observable, of, catchError, from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -199,7 +199,11 @@ isBold = false;
     //     complete: () => console.log('Observable Completed'),
     //   });
 
-    const myObservable = of(1, 2, 3, 4, 5);
+    // const myObservable = of(1, 2, 3, 4, 5);
+
+    // myObservable.subscribe(value => console.log(value));
+
+    const myObservable = from([10, 20, 30, 40]);
 
     myObservable.subscribe(value => console.log(value));
   }
