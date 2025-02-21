@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersDataService } from './services/users-data.service';
 import { ViewChildComponent } from './view-child/view-child.component';
-import { Observable, of, catchError, from, interval, timer } from 'rxjs';
+import { Observable, of, catchError, from, interval, timer, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -211,9 +211,18 @@ isBold = false;
 
     // myObservable.subscribe(value => console.log(value));
 
-    const myObservable = timer(3000); // Emits after 3 seconds
+    // const myObservable = timer(3000); // Emits after 3 seconds
 
-    myObservable.subscribe(value => console.log('Started after delay:', value));
+    // myObservable.subscribe(value => console.log('Started after delay:', value));
+
+    const button = document.getElementById('myButton');
+
+    if (button) {
+      const myObservable = fromEvent(button, 'click');
+      myObservable.subscribe(() => console.log('Button Clicked! which creating an formEvent observable'));
+    } else {
+      console.error('Button element not found');
+    }
   }
 }
 
