@@ -152,17 +152,36 @@ isBold = false;
   observData ='';
   ngOnInit() {
     // Create an Observable
-    const myObservable = new Observable<string>((observer) => {
-      observer.next('Hello'); // Emit first value
-      observer.next('from');
-      observer.next('Observables!');
-      observer.complete(); // Marks completion (no more data)
+    // const myObservable = new Observable<string>((observer) => {
+    //   observer.next('Hello'); // Emit first value
+    //   observer.next('from');
+    //   observer.next('Observables!');
+    //   observer.complete(); // Marks completion (no more data)
+    // });
+
+    // // Subscribe to the Observable
+    // myObservable.subscribe({
+    //   next: (value) => (this.observData += value + ' '), // Collect values
+    //   complete: () => console.log('Observable completed!'),
+    // });
+
+
+  const myObservable = new Observable((observer) => {
+    observer.next('Value 1');
+    observer.next('Value 2');
+
+    // Simulating an error
+    observer.error('Something went wrong!');
+
+    observer.next('Value 3'); // ❌ This will NOT be executed because of the error.
+    observer.complete(); // ❌ Not executed because `error()` stops execution.
     });
 
-    // Subscribe to the Observable
+    // Subscribing to the Observable
     myObservable.subscribe({
-      next: (value) => (this.observData += value + ' '), // Collect values
-      complete: () => console.log('Observable completed!'),
+      next: (value) => console.log('Received:', value),
+      error: (err) => console.error('Error:', err),
+      complete: () => console.log('Observable Completed'),
     });
   }
 }
