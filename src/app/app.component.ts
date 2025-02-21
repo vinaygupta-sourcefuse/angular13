@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersDataService } from './services/users-data.service';
 import { ViewChildComponent } from './view-child/view-child.component';
-import { Observable, of, catchError, from, interval, timer, fromEvent } from 'rxjs';
+import { Observable, of, catchError, from, interval, timer, fromEvent, Subject, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -215,14 +215,30 @@ isBold = false;
 
     // myObservable.subscribe(value => console.log('Started after delay:', value));
 
-    const button = document.getElementById('myButton');
+    // const button = document.getElementById('myButton');
 
-    if (button) {
-      const myObservable = fromEvent(button, 'click');
-      myObservable.subscribe(() => console.log('Button Clicked! which creating an formEvent observable'));
-    } else {
-      console.error('Button element not found');
-    }
+    // if (button) {
+    //   const myObservable = fromEvent(button, 'click');
+    //   myObservable.subscribe(() => console.log('Button Clicked! which creating an formEvent observable'));
+    // } else {
+    //   console.error('Button element not found');
+    // }
+
+    // const subject = new Subject<number>();
+
+    // subject.subscribe(value => console.log('Subscriber 1:', value));
+    // subject.subscribe(value => console.log('Subscriber 2:', value));
+
+    // subject.next(100);
+    // subject.next(200);
+
+    const behaviorSubject = new BehaviorSubject('Initial Value');
+
+    behaviorSubject.subscribe(value => console.log('Subscriber 1:', value));
+
+    behaviorSubject.next('Updated Value');
+
+    behaviorSubject.subscribe(value => console.log('Subscriber 2:', value));
   }
 }
 
