@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersDataService } from './services/users-data.service';
 import { ViewChildComponent } from './view-child/view-child.component';
-import { Observable } from 'rxjs';
+import { Observable, of, catchError } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -166,23 +166,38 @@ isBold = false;
     // });
 
 
-  const myObservable = new Observable((observer) => {
-    observer.next('Value 1');
-    observer.next('Value 2');
+    // const myObservable = new Observable((observer) => {
+    //   observer.next('Value 1');
+    //   observer.next('Value 2');
 
-    // Simulating an error
-    observer.error('Something went wrong!');
+    //   // Simulating an error
+    //   observer.error('Something went wrong!');
 
-    observer.next('Value 3'); // ❌ This will NOT be executed because of the error.
-    observer.complete(); // ❌ Not executed because `error()` stops execution.
+    //   observer.next('Value 3'); // ❌ This will NOT be executed because of the error.
+    //   observer.complete(); // ❌ Not executed because `error()` stops execution.
+    //   });
+
+    //   // Subscribing to the Observable
+    //   myObservable.subscribe({
+    //     next: (value) => console.log('Received:', value),
+    //     error: (err) => console.error('Error:', err),
+    //     complete: () => console.log('Observable Completed'),
+    //   });
+
+    const myObservable = new Observable((observer) => {
+      observer.next('Hello');
+      observer.next('World');
+      observer.error('Something went wrong!');
     });
-
-    // Subscribing to the Observable
-    myObservable.subscribe({
-      next: (value) => console.log('Received:', value),
-      error: (err) => console.error('Error:', err),
-      complete: () => console.log('Observable Completed'),
-    });
+    
+    // Using catchError to handle errors
+    myObservable
+      .pipe(catchError((err) => of('Default Value')))
+      .subscribe({
+        next: (value) => console.log('Received:', value),
+        error: (err) => console.error('Error:', err),
+        complete: () => console.log('Observable Completed'),
+      });
   }
 }
 
